@@ -1,0 +1,37 @@
+{
+  "name": "dvphotocheck.tech — Private DV Photo Suite",
+  "short_name": "DVPhotoCheck",
+  "description": "100% Client-Side U.S. Diversity Visa Photo Suite & Biometric Validator. Works completely offline with zero server data collection.",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#090d16",
+  "theme_color": "#2563eb",
+  "categories": ["utilities", "productivity", "photo"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "AI Photo Cropper",
+      "url": "/crop",
+      "description": "1-Click AI biometric cropping and rotation"
+    },
+    {
+      "name": "12-Point Photo Validator",
+      "url": "/checker",
+      "description": "Audit your existing photo against DoS specs"
+    },
+    {
+      "name": "Confirmation Vault",
+      "url": "/vault",
+      "description": "Secure encrypted confirmation storage"
+    }
+  ]
+}

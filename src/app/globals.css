@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Instrument Serif", "Newsreader", Georgia, serif;
+  --font-mono: "JetBrains Mono", "SF Mono", monospace;
+  
+  --bg-primary: #fcfbf9;
+  --bg-secondary: #f4f2ec;
+  --border-primary: rgba(14, 16, 20, 0.12);
+  --border-secondary: rgba(14, 16, 20, 0.06);
+  --text-primary: #0e1014;
+  --text-secondary: #575e6d;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Touch action control for canvas interaction */
+.canvas-interactive {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Subtle grid line overlay */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(120, 130, 150, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 130, 150, 0.05) 1px, transparent 1px);
+}
+
+/* Crisp hairline borders */
+.hairline-b {
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.hairline-t {
+  border-top: 1px solid var(--border-primary);
+}
+
+.hairline-r {
+  border-right: 1px solid var(--border-primary);
+}
+
+.hairline-l {
+  border-left: 1px solid var(--border-primary);
+}
+
+.hairline-border {
+  border: 1px solid var(--border-primary);
+}
