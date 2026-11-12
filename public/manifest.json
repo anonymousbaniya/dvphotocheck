@@ -1,7 +1,7 @@
 {
-  "name": "dvphotocheck.tech — Private DV Photo Suite",
+  "name": "DVPhotoCheck — Free DV Lottery Photo Checker",
   "short_name": "DVPhotoCheck",
-  "description": "100% Client-Side U.S. Diversity Visa Photo Suite & Biometric Validator. Works completely offline with zero server data collection.",
+  "description": "DVPhotoCheck (dvphotocheck.tech) — 100% Client-Side U.S. Diversity Visa Photo Checker & 600x600 Biometric Validator. Zero server uploads.",
   "start_url": "/",
   "id": "/",
   "display": "standalone",

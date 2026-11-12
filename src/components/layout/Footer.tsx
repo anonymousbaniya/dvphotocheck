@@ -12,10 +12,13 @@ export function Footer() {
           {/* Brand & Purpose */}
           <div className="md:col-span-2 space-y-3">
             <Link href="/" className="font-bold text-sm text-slate-900">
-              dvphotocheck<span className="text-blue-600">.tech</span>
+              DVPhotoCheck <span className="text-blue-600 font-semibold">(dvphotocheck.tech)</span>
             </Link>
-            <p className="text-xs text-slate-500 max-w-sm leading-relaxed">
-              A 100% private, client-side photo tool for U.S. Diversity Visa applicants. Crop, validate, and prepare your photo with zero server uploads.
+            <p className="text-xs text-slate-500 max-w-md leading-relaxed">
+              DVPhotoCheck is a free, 100% client-side DV Lottery photo checker and 600×600 biometric cropper for U.S. Diversity Visa applicants. Validate head size, eye level, and background uniformity with zero server uploads.
+            </p>
+            <p className="text-[11px] text-slate-400 max-w-md leading-relaxed">
+              Independent utility — not affiliated with or endorsed by the U.S. Department of State or U.S. Government.
             </p>
           </div>
 
@@ -89,20 +92,38 @@ export function Footer() {
 
         </div>
 
-        {/* Bottom Disclaimer */}
-        <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-[11px]">
+        {/* Bottom Disclaimer & Official References */}
+        <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
           <div>
-            &copy; {new Date().getFullYear()} dvphotocheck.tech. All processing done client-side.
+            &copy; {new Date().getFullYear()} DVPhotoCheck (dvphotocheck.tech). All processing done client-side.
           </div>
-          <div>
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/photos.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-600 transition-colors inline-flex items-center gap-1"
+            >
+              <span>State Dept. Photo Rules</span>
+              <ExternalLink className="w-3 h-3" aria-hidden="true" />
+            </a>
+            <a
+              href="https://tsg.phototool.state.gov/photo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-600 transition-colors inline-flex items-center gap-1"
+            >
+              <span>Official Photo Tool</span>
+              <ExternalLink className="w-3 h-3" aria-hidden="true" />
+            </a>
             <a
               href="https://dvprogram.state.gov"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-slate-700 transition-colors inline-flex items-center gap-1"
+              className="hover:text-blue-600 transition-colors inline-flex items-center gap-1"
             >
-              <span>Official U.S. State Department Portal</span>
-              <ExternalLink className="w-3 h-3" />
+              <span>DV Program Portal</span>
+              <ExternalLink className="w-3 h-3" aria-hidden="true" />
             </a>
           </div>
         </div>

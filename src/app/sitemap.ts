@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString().split('T')[0];
 
   const routes = [
-    '',
+    '/',
     '/crop',
     '/checker',
     '/eligibility',
@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: currentDate,
     changeFrequency: route.startsWith('/guides') ? 'monthly' : 'weekly',
-    priority: route === '' ? 1.0 : route.startsWith('/guides') ? 0.8 : 0.9,
+    priority: route === '/' ? 1.0 : route.startsWith('/guides') ? 0.8 : 0.9,
   }));
 }
 

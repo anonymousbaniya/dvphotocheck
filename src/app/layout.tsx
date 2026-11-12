@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { DV_SEO_FAQS } from "@/lib/constants/seo-faqs";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -14,54 +15,59 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://dvphotocheck.tech"),
   title: {
-    default: "dvphotocheck.tech — 100% Client-Side U.S. Diversity Visa Photo Suite",
-    template: "%s | dvphotocheck.tech",
+    default: "DVPhotoCheck (dvphotocheck.tech) – Free DV Lottery Photo Checker & Validator",
+    template: "%s | DVPhotoCheck",
   },
   description:
-    "The privacy-first U.S. Green Card Lottery photo suite. 1-Click AI biometric auto-crop, 12-point photo compliance validator, 4x6 print sheet generator, and encrypted confirmation vault. Zero server uploads.",
+    "DVPhotoCheck (dvphotocheck.tech) is a free online DV Lottery and US Visa photo checker. Instantly validate 600x600px dimensions, head size, eye level, and background compliance.",
   keywords: [
+    "dvphotocheck",
+    "dv photo check",
+    "dvphotocheck.tech",
+    "DV lottery photo checker",
+    "green card photo validator",
+    "600x600 photo check",
+    "US visa photo tool",
     "DV Lottery photo",
     "Diversity Visa photo checker",
-    "Green card lottery photo tool",
-    "US visa photo crop",
     "600x600 photo generator",
     "biometric photo validator",
-    "private DV photo",
-    "USCIS photo tool",
-    "DS-260 guide",
-    "Diversity Visa 2026",
-    "Diversity Visa 2027",
   ],
-  authors: [{ name: "dvphotocheck.tech engineering team" }],
-  creator: "dvphotocheck.tech",
-  publisher: "dvphotocheck.tech",
+  authors: [{ name: "DVPhotoCheck Engineering Team" }],
+  creator: "DVPhotoCheck",
+  publisher: "DVPhotoCheck",
+  alternates: {
+    canonical: "https://dvphotocheck.tech/",
+  },
+  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   manifest: "/manifest.json",
   icons: {
     icon: "/icon.svg",
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "dvphotocheck.tech — 100% Client-Side U.S. Diversity Visa Photo Suite",
+    title: "DVPhotoCheck (dvphotocheck.tech) – Free DV Lottery Photo Checker & Validator",
     description:
-      "Automated biometric cropping and 12-point compliance check for U.S. Diversity Visa entrants. 100% client-side privacy sandbox.",
-    url: "https://dvphotocheck.tech",
-    siteName: "dvphotocheck.tech",
+      "DVPhotoCheck (dvphotocheck.tech) is a free online DV Lottery and US Visa photo checker. Instantly validate 600x600px dimensions, head size, eye level, and background compliance.",
+    url: "https://dvphotocheck.tech/",
+    siteName: "DVPhotoCheck",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/icon.svg",
-        width: 512,
-        height: 512,
-        alt: "dvphotocheck.tech Biometric Suite Logo",
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "DVPhotoCheck — Free US DV Lottery Photo Checker & 600x600 Validator",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "dvphotocheck.tech — 100% Client-Side U.S. Diversity Visa Photo Suite",
+    title: "DVPhotoCheck (dvphotocheck.tech) – Free DV Lottery Photo Checker & Validator",
     description:
-      "1-Click AI biometric cropping, 12-point validator, and encrypted confirmation vault for the Green Card Lottery. 0 bytes uploaded.",
+      "Free online DV Lottery photo checker at dvphotocheck.tech. Validate 600x600px dimensions, 240 KB JPEG size, head height (50%-69%), eye level, and background 100% locally.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -72,19 +78,49 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: "dvphotocheck.tech",
-    url: "https://dvphotocheck.tech",
-    applicationCategory: "UtilityApplication",
-    operatingSystem: "Any",
-    browserRequirements: "Requires JavaScript, WebAssembly, and HTML5 Canvas support",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-    },
-    description:
-      "Privacy-first, 100% client-side photo cropper, biometric validator, and applicant tools for the U.S. Diversity Visa Program.",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://dvphotocheck.tech/#website",
+        name: "DVPhotoCheck",
+        alternateName: [
+          "dvphotocheck",
+          "DV Photo Check",
+          "dvphotocheck.tech",
+          "DV Lottery Photo Checker",
+        ],
+        url: "https://dvphotocheck.tech/",
+      },
+      {
+        "@type": ["WebApplication", "SoftwareApplication"],
+        "@id": "https://dvphotocheck.tech/#webapp",
+        name: "DVPhotoCheck",
+        alternateName: ["dvphotocheck", "DVPhotoCheck — Free DV Lottery Photo Checker"],
+        url: "https://dvphotocheck.tech/",
+        applicationCategory: "UtilityApplication",
+        operatingSystem: "All",
+        browserRequirements: "Requires JavaScript, WebAssembly, and HTML5 Canvas support",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+        },
+        description:
+          "Free online DV Lottery photo checker and compliance validator for U.S. Diversity Visa applicants.",
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dvphotocheck.tech/#faq",
+        mainEntity: DV_SEO_FAQS.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      },
+    ],
   };
 
   return (

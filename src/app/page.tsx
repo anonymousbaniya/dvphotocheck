@@ -36,6 +36,7 @@ import { compressToDVSpec, generate4x6PrintSheet } from "@/lib/image/exporter";
 import { runFullPhotoAudit } from "@/lib/validators";
 import type { FullAuditReport } from "@/lib/validators/types";
 import { CameraCapture } from "@/components/tools/CameraCapture";
+import { SeoGuideSection } from "@/components/home/SeoGuideSection";
 
 export default function HomePage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -398,7 +399,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#f8fafd] text-slate-900">
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10 sm:space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10 sm:space-y-12">
         
         {/* 1. Hero Banner (Plain Light Blue Card) */}
         <section className="rounded-3xl bg-[#e8f2fc] border border-blue-200/90 text-slate-900 p-8 sm:p-12 shadow-xs relative overflow-hidden">
@@ -406,18 +407,18 @@ export default function HomePage() {
             
             {/* Pill tag */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/95 text-blue-700 border border-blue-200 shadow-2xs">
-              <Check className="w-3.5 h-3.5 text-blue-600" />
+              <Check className="w-3.5 h-3.5 text-blue-600" aria-hidden="true" />
               <span>Official U.S. State Dept Specifications</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0a2540] leading-tight">
-              Verify, Calibrate &amp; Crop Your DV Lottery Photo
+              DVPhotoCheck – Free DV Lottery Photo Checker &amp; 600×600 Tool
             </h1>
 
             {/* Subtext */}
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl font-normal">
-              Ensure your Diversity Visa entry isn&apos;t rejected for photo non-compliance. Our tool verifies dimensions, background color uniformity, eye &amp; head proportions, and exports a compliant 600×600 JPEG.
+              Use <strong>DVPhotoCheck</strong> (dvphotocheck.tech) for instant <strong>DV Photo Check</strong> validation so your U.S. Diversity Visa entry isn&apos;t rejected. Verify 600×600 pixels, 240 KB JPEG size, 24-bit color, background uniformity, head size &amp; eye level, and export a compliant photo 100% locally.
             </p>
 
           </div>
@@ -1188,17 +1189,20 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 6. Minimal State Department Disclaimer Footer */}
-        <footer className="pt-6 pb-10 text-center text-xs text-slate-400 space-y-1.5">
+        {/* 6. SEO Guide, Official Requirements Table & FAQ */}
+        <SeoGuideSection />
+
+        {/* 7. Minimal State Department Disclaimer */}
+        <aside aria-label="Independence Disclaimer" className="pt-6 pb-10 text-center text-xs text-slate-500 space-y-1.5">
           <div>
             This utility is an independent verification tool built according to public U.S. Department of State photo standards.
           </div>
           <div>
             Not affiliated with or endorsed by the U.S. Government or Department of State. All image processing occurs strictly inside your browser.
           </div>
-        </footer>
+        </aside>
 
-      </main>
+      </div>
 
       {/* Camera Capture Modal */}
       {isCameraOpen && (
