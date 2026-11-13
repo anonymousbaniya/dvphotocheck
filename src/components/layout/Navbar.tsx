@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { 
   ShieldCheck, 
   HelpCircle, 
-  UserSquare2,
   FileText,
   Calculator,
   ListTodo,
@@ -47,8 +47,15 @@ export function Navbar() {
           
           {/* Left: Brand Logo & Title */}
           <Link href="/" className="flex items-center gap-3.5 shrink-0 group focus:outline-none">
-            <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-xs group-hover:bg-blue-700 transition-colors">
-              <UserSquare2 className="w-5 h-5" aria-hidden="true" />
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-xs ring-1 ring-slate-900/10 transition-transform group-hover:scale-105 bg-[#0b1329] flex items-center justify-center">
+              <Image
+                src="/icon-192.png"
+                alt="DVPhotoCheck Logo"
+                width={40}
+                height={40}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
             
             <div className="flex flex-col">

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 
 export function Footer() {
@@ -11,8 +12,17 @@ export function Footer() {
           
           {/* Brand & Purpose */}
           <div className="md:col-span-2 space-y-3">
-            <Link href="/" className="font-bold text-sm text-slate-900">
-              DVPhotoCheck <span className="text-blue-600 font-semibold">(dvphotocheck.tech)</span>
+            <Link href="/" className="inline-flex items-center gap-2.5 font-bold text-sm text-slate-900 group">
+              <span className="relative w-6 h-6 rounded-md overflow-hidden bg-[#0b1329] inline-flex items-center justify-center shrink-0 shadow-2xs">
+                <Image
+                  src="/icon-192.png"
+                  alt="DVPhotoCheck Logo"
+                  width={24}
+                  height={24}
+                  className="w-full h-full object-cover"
+                />
+              </span>
+              <span>DVPhotoCheck <span className="text-blue-600 font-semibold">(dvphotocheck.tech)</span></span>
             </Link>
             <p className="text-xs text-slate-500 max-w-md leading-relaxed">
               DVPhotoCheck is a free, 100% client-side DV Lottery photo checker and 600×600 biometric cropper for U.S. Diversity Visa applicants. Validate head size, eye level, and background uniformity with zero server uploads.
