@@ -17,6 +17,12 @@
   --text-secondary: #575e6d;
 }
 
+html {
+  /* Prevent horizontal overflow on mobile */
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
@@ -25,6 +31,10 @@ body {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent horizontal scrollbar on mobile */
+  overflow-x: hidden;
+  /* Ensure full viewport width is used */
+  width: 100%;
 }
 
 /* Touch action control for canvas interaction */

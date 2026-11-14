@@ -397,22 +397,22 @@ export default function HomePage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#f8fafd] text-slate-900">
+    <div className="flex flex-col min-h-screen bg-[#f8fafd] text-slate-900 overflow-x-hidden w-full">
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10 sm:space-y-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-8 sm:space-y-12 w-full">
         
         {/* 1. Hero Banner (Plain Light Blue Card) */}
-        <section className="rounded-3xl bg-[#e8f2fc] border border-blue-200/90 text-slate-900 p-8 sm:p-12 shadow-xs relative overflow-hidden">
-          <div className="max-w-3xl space-y-4 relative z-10">
+        <section className="rounded-2xl sm:rounded-3xl bg-[#e8f2fc] border border-blue-200/90 text-slate-900 p-5 sm:p-8 lg:p-12 shadow-xs relative overflow-hidden">
+          <div className="max-w-3xl space-y-3 sm:space-y-4 relative z-10">
             
             {/* Pill tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/95 text-blue-700 border border-blue-200 shadow-2xs">
-              <Check className="w-3.5 h-3.5 text-blue-600" aria-hidden="true" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 text-blue-700 border border-blue-200 shadow-2xs">
+              <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" aria-hidden="true" />
               <span>Official U.S. State Dept Specifications</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0a2540] leading-tight">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0a2540] leading-tight">
               DVPhotoCheck – Free DV Lottery Photo Checker &amp; 600×600 Tool
             </h1>
 
@@ -435,10 +435,10 @@ export default function HomePage() {
         )}
 
         {/* 2. Main Two-Column Tool Section: Photo Inspector & Compliance Diagnostic */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-start">
           
           {/* Left Column: Photo Inspector (Cols 1-7) */}
-          <div className="lg:col-span-7 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-2xs space-y-6">
+          <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 p-4 sm:p-6 lg:p-8 shadow-2xs space-y-5 sm:space-y-6">
             
             <div className="flex items-center justify-between pb-4 border-b border-slate-100">
               <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -456,7 +456,7 @@ export default function HomePage() {
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
                 onClick={() => fileInputRef.current?.click()}
-                className="border-2 border-dashed border-blue-200 hover:border-blue-400 rounded-3xl p-12 sm:p-20 text-center cursor-pointer bg-blue-50/20 hover:bg-blue-50/40 transition-all duration-200"
+                className="border-2 border-dashed border-blue-200 hover:border-blue-400 rounded-3xl p-8 sm:p-14 lg:p-20 text-center cursor-pointer bg-blue-50/20 hover:bg-blue-50/40 transition-all duration-200"
               >
                 <input
                   type="file"
@@ -587,13 +587,14 @@ export default function HomePage() {
 
                 {/* Canvas Inspector */}
                 <div className="flex justify-center py-2">
-                  <div className="relative rounded-2xl border border-slate-300 overflow-hidden shadow-xs bg-slate-100">
+                  <div className="relative rounded-2xl border border-slate-300 overflow-hidden shadow-xs bg-slate-100 w-full max-w-[420px]">
                     <canvas
                       ref={canvasRef}
                       onPointerDown={handlePointerDown}
                       onPointerMove={handlePointerMove}
                       onPointerUp={handlePointerUp}
-                      className="cursor-grab active:cursor-grabbing w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] touch-none block"
+                      className="cursor-grab active:cursor-grabbing w-full aspect-square touch-none block"
+                      style={{ maxWidth: 420, maxHeight: 420 }}
                     />
                     <div className="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-md bg-black/65 text-white text-[11px] font-mono pointer-events-none">
                       Drag to pan • 600×600 px
@@ -688,7 +689,7 @@ export default function HomePage() {
           </div>
 
           {/* Right Column: Compliance Diagnostic (Cols 8-12) */}
-          <div className="lg:col-span-5 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-2xs flex flex-col justify-between">
+          <div className="lg:col-span-5 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 p-4 sm:p-6 lg:p-8 shadow-2xs flex flex-col justify-between">
             
             <div className="space-y-5">
               

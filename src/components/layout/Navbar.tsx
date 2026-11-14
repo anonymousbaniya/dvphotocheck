@@ -41,13 +41,13 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-2xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18 py-3.5 gap-4">
+    <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-2xs overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-18 py-2 sm:py-3.5 gap-2 sm:gap-4">
           
           {/* Left: Brand Logo & Title */}
-          <Link href="/" className="flex items-center gap-3.5 shrink-0 group focus:outline-none">
-            <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-xs ring-1 ring-slate-900/10 transition-transform group-hover:scale-105 bg-[#0b1329] flex items-center justify-center">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3.5 shrink-0 group focus:outline-none min-w-0">
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-xs ring-1 ring-slate-900/10 transition-transform group-hover:scale-105 bg-[#0b1329] flex items-center justify-center shrink-0">
               <Image
                 src="/icon-192.png"
                 alt="DVPhotoCheck Logo"
@@ -58,13 +58,13 @@ export function Navbar() {
               />
             </div>
             
-            <div className="flex flex-col">
-              <div className="flex items-center gap-2">
-                <span className="font-sans font-bold text-base sm:text-lg tracking-tight text-slate-900 leading-none">
+            <div className="flex flex-col min-w-0">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="font-sans font-bold text-sm sm:text-base lg:text-lg tracking-tight text-slate-900 leading-none truncate">
                   DVPhotoCheck
                 </span>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-300">
-                  2026 READY
+                <span className="text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-300 shrink-0">
+                  2026
                 </span>
               </div>
               <span className="text-xs text-slate-500 font-normal mt-1 hidden sm:inline">
@@ -96,9 +96,9 @@ export function Navbar() {
           </nav>
 
           {/* Right: Privacy Pill Badge & Mobile Menu Trigger */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* 100% Client-Side Privacy Badge */}
-            <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
+            <div className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
               <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
               <span><strong>100% Client-Side:</strong> No uploads</span>
             </div>
@@ -107,11 +107,11 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-semibold transition-colors"
+              className="lg:hidden inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-semibold transition-colors"
               aria-label="Toggle navigation"
             >
               <Menu className="w-4 h-4 text-slate-500" />
-              <span>Tools</span>
+              <span className="hidden xs:inline sm:inline">Tools</span>
               <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform ${mobileMenuOpen ? "rotate-180" : ""}`} />
             </button>
           </div>
